@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
          }
 
-         primeNumbersDOM.textContent = primesArray;
+         primeNumbersDOM.textContent = `Wszystkie liczby pierwsze niewiększe niż ${n}: ${primesArray}`;
       }
 
       return {
@@ -45,17 +45,19 @@ document.addEventListener('DOMContentLoaded', () => {
          updatePrimes: function () {
             btnCount.addEventListener('click', findPrimes);
          },
+         initCalendarPicker: function () {
+            $('#myInput').calendarsPicker({
+               calendar: $.calendars.instance('gregorian'), // lub np. 'islamic'
+               dateFormat: 'yyyy-mm-dd',
+               onSelect: function (dates) {
+                  // dates to tablica (CDate[]) — możesz pobrać .formatDate()
+                  console.log('Wybrano:', dates[0].formatDate());
+               },
+            });
+         },
       };
    })();
-
-   $('#myInput').calendarsPicker({
-      calendar: $.calendars.instance('gregorian'), // lub np. 'islamic'
-      dateFormat: 'yyyy-mm-dd',
-      onSelect: function (dates) {
-         // dates to tablica (CDate[]) — możesz pobrać .formatDate()
-         console.log('Wybrano:', dates[0].formatDate());
-      },
-   });
+   counterModule.initCalendarPicker();
    counterModule.init();
    counterModule.updatePrimes();
 });
