@@ -1,0 +1,25 @@
+{
+  "name": "project",
+  "version": "1.0.0",
+  "description": "Project for random ideas or tests to handle in free time",
+  "main": "main.js",
+  "type": "module",
+  "scripts": {
+    "lint": "eslint ."
+  },
+  "keywords": [],
+  "author": "Krzysztof Kamieniarz",
+  "license": "ISC",
+  "devDependencies": {
+    "@eslint/js": "^9.8.0",
+    "eslint": "^9.8.0",
+    "eslint-config-prettier": "^10.0.1",
+    "eslint-plugin-prettier": "^5.2.3",
+    "globals": "^15.8.0",
+    "prettier": "^3.3.3",
+    "typescript": "^5.7.3"
+  },
+  "dependencies": {
+    "calendarpickerjs": "^1.4.0"
+  }
+}
