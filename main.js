@@ -1,4 +1,26 @@
 document.addEventListener('DOMContentLoaded', () => {
+   function sumTime(timesArr) {
+      let totalDays = 0;
+      let totalHours = 0;
+      let totalMinutes = 0;
+
+      arr.forEach(el => {
+         let days = el.split('d');
+         totalDays += parseInt(days[0]);
+
+         let hours = days[1].split('h');
+         totalHours += parseInt(hours[0]);
+
+         let minutes = hours[1].split('m')
+         totalMinutes += parseInt(minutes[0]);
+      })
+
+      totalHours += totalMinutes / 60;
+      totalDays += totalHours / 24
+
+      return totalDays;
+   }
+   
    const counterModule = (function () {
       const counterDisplay = document.querySelector('.counter');
       const btnAdd = document.querySelector('#add1');
